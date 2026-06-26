@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pertemuan10_2306063/pages/home_page.dart';
+import 'package:pertemuan10_2306063/pages/login_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'pages/home_page.dart';
-import 'pages/login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,6 +20,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     checkLogin();
   }
@@ -30,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       isLoading = false;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
@@ -43,10 +46,7 @@ class _MyAppState extends State<MyApp> {
     }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: 
-        isLogin
-          ? const HomePage()
-          : const LoginPage(),
+      home: isLogin ? const HomePage() : const LoginPage(),
     );
   }
 }
